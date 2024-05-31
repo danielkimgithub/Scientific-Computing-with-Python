@@ -27,6 +27,8 @@ def arithmetic_arranger(problems, show_answers=False):
         # add spaces to each line
         line1 = f"{operation[0]:>{width}}"
         line2 = operation[1] + f"{operation[2]:>{width-1}}"
+        
+        # generate the correct number of dashes
         dash = '-'*width
         
 
@@ -43,23 +45,21 @@ def arithmetic_arranger(problems, show_answers=False):
         except IndexError:
             arranged_problems.append(dash)
 
+        
+        # append answer if show_answers is True
         if show_answers:
             if operation[1] == '+':
                 ans = int(operation[0]) + int(operation[2])
             else:
                 ans = int(operation[0]) - int(operation[2])
-                
             answer = f"{str(ans):>{width}}"
             
             try:
                 arranged_problems[3] += (' ' * 4) + answer
             except IndexError:
                 arranged_problems.append(answer)
+                
 
-
-
-        # generate the correct number of dashes
-        # append answer if show_answers is True
     output = f"{arranged_problems[0]}\n{arranged_problems[1]}\n{arranged_problems[2]}"
     if show_answers:
         output = output + f"\n{arranged_problems[3]}"

@@ -4,7 +4,7 @@ def arithmetic_arranger(problems, show_answers=False):
     
     arranged_problems=[]
 
-    for index, value in enumerate(problems):
+    for value in problems:
         # ["32", "+", "698"]
         operation = value.split(" ")
 
